@@ -61,4 +61,10 @@ Rscript ./bioinf_scripts/Filtering_VCF.R
 Rscript ./analysis_scripts/WES_QC.R
 ```
 
+6. Generates TMB comparison to CheckMate 275 TMB: "Supplemental Figure S4"
+
+```
+Rscript ./analysis_scripts/TMB_comparison.R
+```
+
 
