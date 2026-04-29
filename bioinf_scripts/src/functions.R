@@ -1,6 +1,10 @@
 ## This script contains a set of functions used in downstream analyses
 library("dplyr")
 library("ggplot2")
+library("tidyr")
+library("gridExtra")
+
+
 
 get_sample_name_from_vcf_file <- function(vcf_file_name, file_pattern){
   return(gsub(file_pattern, "", basename(vcf_file_name)))

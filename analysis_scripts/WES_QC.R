@@ -1,8 +1,11 @@
+## On command line: Rscript ./analysis_scripts/WES_QC.R
+## On R: source("./analysis_scripts/WES_QC.R", echo = TRUE)
 library("dplyr")
 library("ggplot2")
 
-TMB_df <- read.table("./wes_data/summary_data/TMB_QC_table.txt",
+TMB_df <- read.table("./wes_data/summary_data/TMB_QC_Response.txt",
 header=T, as.is=T, sep="\t")
+
 
 ####### QC_pass column assignment ######
 #TMB_df$QC_pass <- "FAIL:low_coverage"
@@ -13,8 +16,8 @@ header=T, as.is=T, sep="\t")
 #            TMB_df$captured_exon_size > 25*10^6 ] <- "PASS_tier2"
 ########################### #############   
 
+## Compute TMB / Mb 
 TMB_df$scaled_TMB_missense <- TMB_df$n_missense / TMB_df$captured_exon_size * 10^6
-
 
 pdf("./wes_data/summary_data/Supplemental_Figure_S1.pdf")
 TMB_df %>%
