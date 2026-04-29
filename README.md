@@ -17,7 +17,7 @@ A. Funt1,4#
 
 *All authors contributed equally to this work
 
-#Corresponding Author:
+#Corresponding Author
 ```
 
 
