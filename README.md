@@ -1,5 +1,4 @@
-# Response Adapted Treatment with Nivolumab+Ipilimumab in mUC
-
+## Response Adapted Treatment with Nivolumab+Ipilimumab in mUC
 
 Supporting bioinformatics code for Gupta et al (2026, submitted, under review)
 
@@ -40,7 +39,7 @@ Rscript ./bioinf_scripts/NCBI_refseq_genes_hg19_to_bedfile.R
 3. Extract regions from tumor and normal regions that are covered at 10X for tumor and 7X for normal
 
 ```
-bash compute_10x_regions.sh <tumor_bam> <normal_bam> <vcf_file> <outdir>
+bash ./bionf_scripts/compute_10x_regions.sh <tumor_bam> <normal_bam> <vcf_file> <outdir>
 ```
 
 Samtools and Bedtools paths need to be specified within the script.
