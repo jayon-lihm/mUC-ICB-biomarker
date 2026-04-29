@@ -2,16 +2,18 @@
 ## using Agilent SureSelect Human All Exon V4 coordinate (S03723314)
 ## to compute the median depth 
 
+## bash picard_collectHSMetrics.sh <tumor_bam> <normal_bam> <ref_fasta> <output_dir>
+
 target_interval="./wes_data/reference/S03723314_Covered.bed.2.interval_list"
 
 ## picard version: 2.11
 
 ###############################################
 ######### USER DEFINED INPUT/OUTPUT ###########
-normal_bam=""
-tumor_bam=""
-ref_fasta="path to b37(hg19) reference fasta"
-output_dir=""
+tumor_bam=$1
+normal_bam=$2
+ref_fasta=$3 #"path to b37(hg19) reference fasta"
+output_dir=$4
 ################################################
 
 

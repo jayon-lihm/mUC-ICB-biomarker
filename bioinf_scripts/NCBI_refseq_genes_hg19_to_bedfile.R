@@ -1,7 +1,7 @@
 ## This script is to convert NCBI refseq hg19's exon coordinates
 ## into a sorted bed file format.
 
-ncbi_refseq_genes <- read.table("NCBI_refseq_genes_HG19.tsv.gz", header=F, as.is=T, sep="\t")
+ncbi_refseq_genes <- read.table("./wes_data/reference/NCBI_refseq_genes_HG19.tsv.gz", header=F, as.is=T, sep="\t")
 exon_start_end <- ncbi_refseq_genes[, c(3, 10, 11)]
 colnames(exon_start_end) <- c("chrom", "exon_starts", "exon_ends")
 

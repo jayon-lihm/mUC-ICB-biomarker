@@ -1,21 +1,22 @@
-## This script is to extract mutations from vcf
+## This script is to extract mutations from vcf of regions covered at pre-defined coverage 
+## 10x for tumor, 7x for normal
 
+## RUN: bash compute_10x_regions.sh <tumor_bam> <normal_bam> <vcf_file> <outdir>
 
-###############################################
-######### USER DEFINED INPUT/OUTPUT ###########
 ## samtools and bedtools required
 bedtools="path-to-bedtools"
 samtools="path-to-samtools"
+exon_regions="./wes_data/reference/NCBI_refseq_genes_exon_HG19_sorted.bed" ## output from previous step
 
-exon_regions="./wes_data/reference/NCBI_refseq_genes_exon_HG19_sorted.bed"
-
+###############################################
+######### USER DEFINED INPUT/OUTPUT ###########
 ## DEFINE INPUT bam file paths
-tumor_bam=""
-normal_bam=""
-vcf_file=""
+tumor_bam=$1
+normal_bam=$2
+vcf_file=$3
 
 ## DEFINE output bed files
-outidr="[OUTPUT DIR]"
+outidr=$4
 tumor_bam_10xbed="$outdir/tumor_bam_10x.bed"
 normal_bam_7xbed="$outdir/normal_bam_7x.bed"
 overlap_bed="$outdir/tumor_normal_region_overlap.bed"
