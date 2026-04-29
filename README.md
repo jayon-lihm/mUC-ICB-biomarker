@@ -1,7 +1,7 @@
 # Response Adapted Treatment with Nivolumab+Ipilimumab in mUC
 
 
-Supporting bioinformatics code for Gupta et al (2026, submitted)
+Supporting bioinformatics code for Gupta et al (2026, submitted, under review)
 
 ```
 Response Adapted Immunotherapy with Nivolumab and Salvage Ipilimumab in Metastatic Urothelial Carcinoma: A Single Arm, Phase II Trial with Biomarker Analyses
