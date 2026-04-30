@@ -1,12 +1,14 @@
 
 
-if (!require("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("ComplexHeatmap")
+#if (!require("BiocManager", quietly = TRUE))
+#    install.packages("BiocManager")
+#BiocManager::install("ComplexHeatmap")
 
 library(ComplexHeatmap) ## for oncoprint
 ## https://jokergoo.github.io/ComplexHeatmap-reference/book/oncoprint.html
+
+nonsyn_include <- c("splice", "missense_variant", "frameshift_variant", "stop_gained", "start_lost", "stop_lost",
+                    "disruptive_inframe_deletion", "disruptive_inframe_insertion")
 
 
 filter_nonsyn_mut_types <- function(vcf_df, nonsyn_types){
@@ -46,6 +48,47 @@ long_to_wide_by_gene <- function(vcf_df, nonsyn_types=NULL, recoding=TRUE){
   return(out)
 }
 
+collect_muts_by_gene <- function(vcf_df, recoding=TRUE){
+  ## This function collects muts by gene
+  ## so that each sample can have one row per gene
+  ## Multiple mutations are collapsed by ";"
+  ## Order of selection: 
+  ## frameshift > missense > stop_lost
+  ## > stop_gain, start_lost 
+  ## > disruptive_inframe > splice
+  
+  if (recoding){
+    vcf_df$mut_type <- sapply(vcf_df$mut_type, "recoding_mutation_type", USE.NAMES = FALSE)
+  }
+  
+  out <- vcf_df %>%
+    dplyr::select(gene_name, mut_type, sample_name) %>%
+    group_by(sample_name, gene_name) %>%
+    summarize(mut_types=paste( unique(mut_type), collapse=";"))
+  
+  return(out)
+}
+
+recoding_mutation_type <- function(mutation_type){
+  recoded_mutation_type <- NULL
+  ## Order of selection: 
+  ## frameshift > missense > stop_lost
+  ## > stop_gain, start_lost 
+  ## > disruptive_inframe > splice
+  
+  if (grepl("frameshift", mutation_type)){
+    recoded_mutation_type <- "frameshift"
+  } else if ( grepl("missense", mutation_type)){
+    recoded_mutation_type <- "missense"
+  } else if ( grepl("stop_lost", mutation_type)){
+    recoded_mutation_type <- "stop_lost"
+  } else if ( grepl("stop_gain", mutation_type)){
+    recoded_mutation_type <- "stop_gain"
+  } else {
+    recoded_mutation_type <- "other"
+  }
+  
+}
 
 convert_to_oncoprint_mat <- function(vcf_df, gene_list, nonsyn_types=NULL, recoding=TRUE){
   ## [Expected output]

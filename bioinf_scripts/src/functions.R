@@ -5,6 +5,10 @@ library("tidyr")
 library("gridExtra")
 
 
+nonsyn_include <- c("splice", "missense_variant", "frameshift_variant", "stop_gained", "start_lost", "stop_lost",
+                    "disruptive_inframe_deletion", "disruptive_inframe_insertion")
+
+vcf_header <- c("#CHROM", "POS", "ID", "REF", "ALT", "QUAL", "FILTER", "INFO", "FORMAT", "NORMAL", "TUMOR")
 
 get_sample_name_from_vcf_file <- function(vcf_file_name, file_pattern){
   return(gsub(file_pattern, "", basename(vcf_file_name)))
