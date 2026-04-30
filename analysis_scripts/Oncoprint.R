@@ -8,8 +8,8 @@
 ## TCGA bladder
 ## TP53, MUC16, KMT2D, KDM6A, ARID1A, PIK3CA, KMT2C, RB1, *FAT4, *CSMD3 (>15%)
 
-source("./bioinf_scripts/src/oncoprint_functions.R")
-source("./bioinf_scripts/src/oncoprint_graphic_setting.R")
+source("./src/oncoprint_functions.R")
+source("./src/oncoprint_graphic_setting.R")
 
 TMB_df <- read.table("./wes_data/summary_data/TMB_QC_Response.txt",
 header=T, as.is=T, sep="\t")

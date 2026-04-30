@@ -18,13 +18,14 @@ header=T, as.is=T, sep="\t")
 
 ## Compute TMB / Mb 
 TMB_df$scaled_TMB_missense <- TMB_df$n_missense / TMB_df$captured_exon_size * 10^6
+TMB_df$scaled_TMB_nonsyn <- TMB_df$n_nonsyn_muts / TMB_df$captured_exon_size * 10^6
 
 pdf("./wes_data/summary_data/Supplemental_Figure_S1.pdf")
 TMB_df %>%
   ggplot(aes(x=captured_exon_size, y=n_missense, color=QC_pass)) +
   geom_point() +
   ylab("# missense mutations") + xlab("Captured Exon size (bp)") +
-  ggtitle("# missense mutations vs % target regions captured at 10X")
+  ggtitle("# missense mutations vs exon regions captured at 10X")
 
 TMB_df %>%
   ggplot(aes(x=PCT_TARGET_BASES_10X.tumor, y=captured_exon_size, color=QC_pass)) +
@@ -34,14 +35,16 @@ TMB_df %>%
   ggtitle("Captured exon size vs % target regions captured at 10X")
 
 TMB_df %>%
-  ggplot(aes(x=captured_exon_size, y=n_missense)) +
+  ggplot(aes(x=captured_exon_size, y=n_nonsyn_muts)) +
   geom_point(aes(color=QC_pass)) +
+  xlab("Captured Exon size (bp)") +
   ggtitle("# nonsyn mutations detected in exonic regions")
 
 TMB_df %>%
   ggplot(aes(x=captured_exon_size, y=scaled_TMB_missense)) +
   geom_point(aes(color=QC_pass)) +
-  ggtitle("Missense TMB/Mb vs captured exon size")
+  xlab("Captured Exon size (bp)") + 
+  ggtitle("Nonsyn TMB/Mb vs captured exon size")
 
 dev.off()
 
