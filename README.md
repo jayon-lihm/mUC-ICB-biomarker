@@ -1,6 +1,9 @@
-## Response Adapted Treatment with Nivolumab+Ipilimumab in mUC
+# Code repository for Gupta et al (2026, unver review)
 
-Supporting bioinformatics code for Gupta et al (2026, submitted, under review)
+### Response Adapted Treatment with Nivolumab+Ipilimumab in mUC
+
+This repository provides codes for analyses and figures included in Gupta et al (2026, under review).
+
 
 ```
 Response Adapted Immunotherapy with Nivolumab and Salvage Ipilimumab in Metastatic Urothelial Carcinoma: A Single Arm, Phase II Trial with Biomarker Analyses
@@ -20,7 +23,10 @@ A. Funt1,4#
 ```
 
 
+
 ## Steps
+
+### Data processing
 
 1. Run Picard's CollectHSmetrics to get QC measures
 
@@ -54,16 +60,27 @@ Samtools: https://www.htslib.org/
 Rscript ./bioinf_scripts/Filtering_VCF.R
 ```
 
-5. Generates QC Figures in "Supplemental Figure S1".
+### Supplemental Figure S1
+
+Generates QC Figures in "Supplemental Figure S1".
 
 ```
 Rscript ./analysis_scripts/WES_QC.R
 ```
 
-6. Generates TMB comparison to CheckMate 275 TMB: "Supplemental Figure S4"
+### Supplemental Figure S4
+
+Generates TMB comparison to CheckMate 275 TMB: "Supplemental Figure S4"
 
 ```
 Rscript ./analysis_scripts/TMB_comparison.R
 ```
 
+### Supplemental Figure S5
+
+Generates Oncoprint
+
+```
+Rscript ./analysis_scripts/Oncoprint.R
+```
 
