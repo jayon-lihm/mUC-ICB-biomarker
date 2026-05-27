@@ -24,7 +24,7 @@ A. Funt1,4#
 
 
 
-## Steps
+## WES Steps
 
 ### Data processing
 
@@ -79,8 +79,17 @@ Rscript ./analysis_scripts/TMB_comparison.R
 ### Supplemental Figure S5
 
 Generates Oncoprint
-
 ```
 Rscript ./analysis_scripts/Oncoprint.R
+```
+
+## RNA-seq Steps
+
+### DEseq
+
+```
+conda activate R4.3
+Rscript deseq_pc.R full
+Rscript deseq_pc.R combofull
 ```
 
