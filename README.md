@@ -88,8 +88,7 @@ Rscript ./analysis_scripts/Oncoprint.R
 ### DEseq
 
 ```
-conda activate R4.3
-Rscript deseq_pc.R full
-Rscript deseq_pc.R combofull
+conda activate mUC_ICB_RNA
+
 ```
 
