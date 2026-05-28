@@ -2,7 +2,7 @@
 ## Create dataframe and plots comparing to CM275 tertile lines
 ## Generates Supplemental Figure S4
 
-source("./src/functions.R") ## to load libraries
+source("./src/wes/functions.R") ## to load libraries
 
 TMB_df <- read.table("./wes_data/summary_data/TMB_QC_Response.txt",
 header=T, as.is=T, sep="\t")
