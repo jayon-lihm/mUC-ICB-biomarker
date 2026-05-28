@@ -33,13 +33,13 @@ A. Funt1,4#
 Picard image: `singularity pull docker://levim/picard:2.11`
 
 ```
-bash ./bioinf_scripts/picard_collectHSMetrics.sh <tumor_bam> <normal_bam> <ref_fasta> <output_dir>
+bash ./src/picard_collectHSMetrics.sh <tumor_bam> <normal_bam> <ref_fasta> <output_dir>
 ``` 
 
 2. Converts NCBI RefSeq exon coordinates into a sorted bedfile
 
 ```
-Rscript ./bioinf_scripts/NCBI_refseq_genes_hg19_to_bedfile.R
+Rscript ./src/NCBI_refseq_genes_hg19_to_bedfile.R
 ```
 
 3. Extract regions from tumor and normal regions that are covered at 10X for tumor and 7X for normal
@@ -57,7 +57,7 @@ Samtools: https://www.htslib.org/
 4. Filter VCF based on variant allele frequency (VAF)
 
 ```
-Rscript ./bioinf_scripts/Filtering_VCF.R
+Rscript ./src/Filtering_VCF.R
 ```
 
 ### Supplemental Figure S1
