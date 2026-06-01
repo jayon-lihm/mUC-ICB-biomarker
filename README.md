@@ -98,4 +98,6 @@ conda activate mUC_ICB_RNA
 
 `./analysis_scripts/Gene_Expression_Analysis.ipynb` 
 
+DESEQ outputs need to be fed into the Jupyter notebook. The deseq output files used for generating figures are in `./data/rna_seq_data/deseq_output`.
+
 
