@@ -85,6 +85,9 @@ Rscript ./analysis_scripts/Oncoprint.R
 
 ## RNA-seq Steps
 
+RNA-seq analysis is performed by Ning (Estelle) Yao. (yaon@mskcc.org)
+
+
 ### DEseq
 
 ```
