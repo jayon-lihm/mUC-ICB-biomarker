@@ -26,6 +26,8 @@ A. Funt1,4#
 
 ## WES Steps
 
+WES analysis is performed by Jayon Lihm (lihmj@mskcc.org).
+
 ### Data processing
 
 1. Run Picard's CollectHSmetrics to get QC measures
