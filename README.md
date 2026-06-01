@@ -87,11 +87,15 @@ Rscript ./analysis_scripts/Oncoprint.R
 
 RNA-seq analysis is performed by Ning (Estelle) Yao. (yaon@mskcc.org)
 
-
-### DEseq
+Conda environment for the analysis can be set up with `setup.sh` script.
 
 ```
 conda activate mUC_ICB_RNA
 
 ```
+
+### Figure 2A + Supp Figure S6
+
+`./analysis_scripts/Gene_Expression_Analysis.ipynb` 
+
 
