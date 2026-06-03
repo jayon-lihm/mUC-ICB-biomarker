@@ -26,7 +26,7 @@ A. Funt1,4#
 
 Download "data" folder from:
 
-https://mskcc.box.com/s/ry6fudravywlfkjil3eoky5kio7vzn1q
+https://mskcc.box.com/s/v35jtbe6tkeswz66x8z9tafwp2g1yij3
 
 ## WES Steps
 
