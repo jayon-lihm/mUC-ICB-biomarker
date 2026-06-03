@@ -22,7 +22,11 @@ A. Funt1,4#
 #Corresponding Author
 ```
 
+## Download
 
+Download "data" folder from:
+
+https://mskcc.box.com/s/ry6fudravywlfkjil3eoky5kio7vzn1q
 
 ## WES Steps
 
