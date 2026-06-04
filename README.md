@@ -22,7 +22,7 @@ A. Funt1,4#
 #Corresponding Author
 ```
 
-## Download
+## Data
 
 Download "data" folder from:
 
@@ -92,6 +92,9 @@ Rscript ./analysis_scripts/Oncoprint.R
 ## RNA-seq Steps
 
 RNA-seq analysis is performed by Ning (Estelle) Yao. (yaon@mskcc.org)
+
+Codes and notebook are reorganized/edited by Jayon Lihm.
+
 
 Conda environment for the analysis can be set up with `setup.sh` script.
 
